@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Write classes and inheritance using ES6 with example</title>
+
+<head>
+    <body>
+    <script type="text/javascript">
+        class stud {
+            constructor(name) {
+                this.sname = name;
+            }
+            placement() {
+                return `hi i am ${this.sname}`;  //${} is a placeholder for js anything whithin {} its js and outside its string or something else
+            }
+        }
+        class stud1 extends stud {
+            constructor(name) {
+                super(name); //The super keyword refers to superclass (parent) objects. It is used to call superclass methods, and to access the superclass constructor.
+
+            }
+        }
+        let stu1 = new stud1('Shubham');
+        console.log(stu1.placement());
+
+        let stu3 = new stud1('Yash');
+        console.log(stu3.placement());
+    </script>
+
+    </body>
+</head>
+
+</html>

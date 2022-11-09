@@ -1,0 +1,28 @@
+<html>
+<body>
+	<button id="b1">Submit</button>
+<div id="d1">	
+</div>
+</body>
+</html>
+<script>
+	document.getElementById("b1").addEventListener("click",test);
+	function test()
+	{
+		document.getElementById("d1").innerText='pending.....';
+		setTimeout(()=>{
+            document.getElementById("d1").innerText='';
+		fetch('new.json')
+		.then((result)=>{
+			return result.json();
+		
+		}).then((record)=>{
+		for(let x in record)
+    {
+			document.getElementById("d1").innerHTML+=`<br>name:${record[x].name}`;
+		}
+  });
+		},2000);
+  }
+</script> 
+</html>

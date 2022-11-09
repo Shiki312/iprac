@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITERATOR</title>
+</head>
+
+<body>
+    <script>
+        const arr = [10, 20, 30, 40, 50];
+        // ES5
+        function NumberIterator(arr) {
+            var nextNum = 0;
+            return {
+                next() {
+                    if (nextNum < arr.length) {
+                        return {
+                            value: arr[nextNum++],
+                            done: false
+                        }
+                    } else {
+                        return {
+                            done: true
+                        }
+                    }
+
+                }
+            }
+        }
+
+        let num = NumberIterator(arr)
+        console.log(num.next().value)
+        console.log(num.next().value)
+        console.log(num.next().value)
+        console.log(num.next().value)
+        console.log(num.next().value)
+
+
+
+        //ES6
+        let arrIterator = arr[Symbol.iterator]();
+        console.log(arrIterator.next().value); // {value: "h", done: false}
+        console.log(arrIterator.next().value); // {value: "e", done: false}
+
+
+
+
+    </script>
+</body>
+
+</html>
